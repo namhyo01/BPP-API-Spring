@@ -28,4 +28,4 @@ ENV PROFILE_ACTIVE=${PROFILE_ACTIVE}
 ARG JAR_FILE=build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-Dspring.profiles.active=${PROFILE_ACTIVE}","-Djasypt.encryptor.password=${JASYPT_SECRET}","-Dspring.config.import=${CONFIG_IMPORT}", "-jar","app.jar"]
+ENTRYPOINT ["java","-Dspring.profiles.active=${PROFILE_ACTIVE}","-Djasypt.encryptor.password=${JASYPT_SECRET}","-Dspring.config.import=optional:configserver:https://dev.yeohaengparty.com/config", "-jar","app.jar"]
