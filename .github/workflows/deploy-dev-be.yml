@@ -35,7 +35,13 @@ jobs:
         uses: actions/checkout@v3
         with: 
           repository: swm-nodriversomabus/Files
+          ref: main
           path: './src/main/resources/firebase'
+      # - name: Move File to src/resources/firebase
+      #   run: |
+      #     mkdir -p src/resources/firebase
+      #     cp temp-repo/path/to/file.ext src/resources/firebase/
+        # working-directory: your/app/path # 앱의 작업 디렉토리
 
       # JDK 설정
       - name: Set up JDK 17
