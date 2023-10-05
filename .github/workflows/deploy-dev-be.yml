@@ -28,6 +28,15 @@ jobs:
     steps:
       - name: Checkout  # 현재 Repo Clone
         uses: actions/checkout@v3
+      - name: Set Up Firebase Folder and Files
+        run: |
+          mkdir -p src/main/resources/firebase
+      - name: Checkout files
+        uses: actions/checkout@v3
+        with: 
+          repository: swm-nodriversomabus/Files
+          path: './src/main/resources/firebase'
+
       # JDK 설정
       - name: Set up JDK 17
         uses: actions/setup-java@v3
